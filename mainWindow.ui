@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>615</width>
-    <height>523</height>
+    <width>718</width>
+    <height>634</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,243 +36,21 @@
     </item>
     <item row="1" column="0">
      <layout class="QGridLayout" name="gridLayout">
+      <item row="4" column="0">
+       <spacer name="verticalSpacer_19">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
       <item row="7" column="0">
        <spacer name="verticalSpacer_16">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="9" column="0">
-       <spacer name="verticalSpacer_17">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="3" column="0">
-       <layout class="QGridLayout" name="gridLayout_10">
-        <item row="0" column="5">
-         <widget class="QPushButton" name="pushButton_verdeel">
-          <property name="text">
-           <string>verdeel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="4">
-         <spacer name="horizontalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="6">
-         <spacer name="horizontalSpacer_46">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_verbruikTotaal">
-          <property name="text">
-           <string>4290</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <spacer name="verticalSpacer_18">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_76">
-          <property name="text">
-           <string>Totaal verbruik</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3">
-         <widget class="QLabel" name="label_77">
-          <property name="text">
-           <string>Kwh</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <spacer name="verticalSpacer_20">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-      <item row="6" column="1">
-       <layout class="QGridLayout" name="gridLayout_4">
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>prijs per Kwh</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QLineEdit" name="lineEdit_ePrijsHeen"/>
-        </item>
-        <item row="3" column="1">
-         <widget class="QLabel" name="label_25">
-          <property name="text">
-           <string>€</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="2">
-         <spacer name="verticalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_24">
-          <property name="text">
-           <string>teruglever prijs per Kwh</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <spacer name="verticalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="3" column="2">
-         <widget class="QLineEdit" name="lineEdit_ePrijsTerug"/>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLabel" name="label_15">
-          <property name="text">
-           <string>€</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="3">
-         <spacer name="horizontalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_75">
-          <property name="text">
-           <string>Teruglever belasting</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="QLabel" name="label_74">
-          <property name="text">
-           <string>%</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="2">
-         <widget class="QLineEdit" name="lineEdit_ePrijsTerugTax"/>
-        </item>
-       </layout>
-      </item>
-      <item row="8" column="1">
-       <spacer name="verticalSpacer_15">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="2" column="0">
-       <spacer name="verticalSpacer_2">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -346,7 +124,7 @@
           <item row="0" column="1">
            <widget class="QLabel" name="label_55">
             <property name="text">
-             <string>   </string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -412,7 +190,7 @@
           <item row="0" column="1">
            <widget class="QLabel" name="label_53">
             <property name="text">
-             <string>   </string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -478,7 +256,7 @@
           <item row="0" column="1">
            <widget class="QLabel" name="label_57">
             <property name="text">
-             <string>   </string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -486,6 +264,19 @@
         </item>
         <item row="3" column="5">
          <layout class="QGridLayout" name="gridLayout_23">
+          <item row="0" column="0">
+           <spacer name="horizontalSpacer_14">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item row="0" column="2">
            <widget class="QLineEdit" name="lineEdit_verbruikDagFeb">
             <property name="sizePolicy">
@@ -515,19 +306,6 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="0">
-           <spacer name="horizontalSpacer_14">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
           <item row="0" column="4">
            <spacer name="horizontalSpacer_15">
             <property name="orientation">
@@ -544,7 +322,7 @@
           <item row="0" column="1">
            <widget class="QLabel" name="label_43">
             <property name="text">
-             <string>   </string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -610,7 +388,7 @@
           <item row="0" column="1">
            <widget class="QLabel" name="label_51">
             <property name="text">
-             <string>   </string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -619,7 +397,7 @@
         <item row="11" column="5">
          <layout class="QGridLayout" name="gridLayout_31">
           <item row="0" column="2">
-           <widget class="QLineEdit" name="lineEdit_39">
+           <widget class="QLineEdit" name="lineEdit_verbruikDagSep">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -676,7 +454,7 @@
           <item row="0" column="1">
            <widget class="QLabel" name="label_59">
             <property name="text">
-             <string>   </string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -991,7 +769,7 @@
           <item row="0" column="1">
            <widget class="QLabel" name="label_41">
             <property name="text">
-             <string>   </string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -1172,7 +950,7 @@
           <item row="0" column="1">
            <widget class="QLabel" name="label_49">
             <property name="text">
-             <string>   </string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -1238,7 +1016,7 @@
           <item row="0" column="1">
            <widget class="QLabel" name="label_61">
             <property name="text">
-             <string>   </string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -1304,7 +1082,7 @@
           <item row="0" column="1">
            <widget class="QLabel" name="label_47">
             <property name="text">
-             <string>   </string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -1370,7 +1148,7 @@
           <item row="0" column="1">
            <widget class="QLabel" name="label_73">
             <property name="text">
-             <string>   </string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -1436,11 +1214,337 @@
           <item row="0" column="1">
            <widget class="QLabel" name="label_69">
             <property name="text">
-             <string>   </string>
+             <string/>
             </property>
            </widget>
           </item>
          </layout>
+        </item>
+       </layout>
+      </item>
+      <item row="6" column="1">
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="6" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>prijs per Kwh</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="2">
+         <widget class="QLineEdit" name="lineEdit_ePrijsHeen">
+          <property name="text">
+           <string>0.22</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QLabel" name="label_25">
+          <property name="text">
+           <string>€</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="2">
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="label_24">
+          <property name="text">
+           <string>teruglever prijs per Kwh</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLabel" name="label_75">
+          <property name="text">
+           <string>Teruglever belasting</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="9" column="1">
+         <widget class="QLabel" name="label_74">
+          <property name="text">
+           <string>%</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="2">
+         <widget class="QLineEdit" name="lineEdit_ePrijsTerugTax">
+          <property name="text">
+           <string>0.00</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="2">
+         <widget class="QLineEdit" name="lineEdit_ePrijsTerug">
+          <property name="text">
+           <string>0.07</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLineEdit" name="lineEdit_3">
+          <property name="text">
+           <string>0.85</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_">
+          <property name="text">
+           <string>vaste leveringskosten (per dag)</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="label_80">
+          <property name="text">
+           <string>€</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_18">
+          <property name="text">
+           <string>netbeheerkosten (per dag)</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLineEdit" name="lineEdit_netbeheerkosten">
+          <property name="text">
+           <string>0.20</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_17">
+          <property name="text">
+           <string>toeslagen (per dag)</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <spacer name="horizontalSpacer_50">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_16">
+          <property name="text">
+           <string>€</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>€</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="3">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLineEdit" name="lineEdit_vasteLeveringskosten">
+          <property name="text">
+           <string>0.20</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="label_79">
+          <property name="text">
+           <string>€</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="8" column="0">
+       <spacer name="horizontalSpacer_48">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="3" column="1">
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="12" column="0">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item row="9" column="0">
+       <spacer name="verticalSpacer_17">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="3" column="0">
+       <layout class="QGridLayout" name="gridLayout_10">
+        <item row="0" column="4">
+         <widget class="QPushButton" name="pushButton_verdeel">
+          <property name="text">
+           <string>verdeel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="lineEdit_verbruikTotaal">
+          <property name="text">
+           <string>4290</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <spacer name="verticalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="3">
+         <spacer name="verticalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="label_77">
+          <property name="text">
+           <string>Kwh</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_76">
+          <property name="text">
+           <string>Totaal verbruik</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QCheckBox" name="checkBox_gelijkeMaanden">
+          <property name="text">
+           <string>gelijke maanden</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -1457,8 +1561,8 @@
         </property>
        </spacer>
       </item>
-      <item row="4" column="0">
-       <spacer name="verticalSpacer_19">
+      <item row="8" column="1">
+       <spacer name="verticalSpacer_15">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -1466,19 +1570,6 @@
          <size>
           <width>20</width>
           <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="8" column="0">
-       <spacer name="horizontalSpacer_48">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
          </size>
         </property>
        </spacer>
@@ -1506,21 +1597,7 @@
    <layout class="QGridLayout" name="gridLayout_16">
     <item row="1" column="0">
      <layout class="QGridLayout" name="gridLayout_11">
-      <item row="3" column="3">
-       <widget class="QLineEdit" name="lineEdit_omvormerRendement">
-        <property name="text">
-         <string>100</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="4">
-       <widget class="QLabel" name="label_22">
-        <property name="text">
-         <string>%</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
+      <item row="0" column="2">
        <spacer name="horizontalSpacer_47">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -1533,7 +1610,7 @@
         </property>
        </spacer>
       </item>
-      <item row="10" column="0">
+      <item row="10" column="1">
        <spacer name="verticalSpacer_22">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -1546,7 +1623,7 @@
         </property>
        </spacer>
       </item>
-      <item row="2" column="0">
+      <item row="2" column="1">
        <spacer name="verticalSpacer_14">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -1559,7 +1636,7 @@
         </property>
        </spacer>
       </item>
-      <item row="8" column="0">
+      <item row="8" column="1">
        <spacer name="verticalSpacer_21">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -1572,17 +1649,7 @@
         </property>
        </spacer>
       </item>
-      <item row="3" column="2">
-       <widget class="QLabel" name="label_21">
-        <property name="text">
-         <string>rendement omvormer</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="9" column="2">
+      <item row="9" column="3">
        <spacer name="verticalSpacer_25">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -1595,7 +1662,7 @@
         </property>
        </spacer>
       </item>
-      <item row="3" column="0">
+      <item row="3" column="1">
        <layout class="QGridLayout" name="gridLayout_12">
         <item row="0" column="2">
          <spacer name="horizontalSpacer_5">
@@ -1624,9 +1691,45 @@
           </property>
          </widget>
         </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_82">
+          <property name="text">
+           <string>Orientatie richting</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="comboBox_orientatie">
+          <item>
+           <property name="text">
+            <string>Zuid</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Noord</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Oost</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>West</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Vlak</string>
+           </property>
+          </item>
+         </widget>
+        </item>
        </layout>
       </item>
-      <item row="7" column="0">
+      <item row="7" column="1">
        <layout class="QGridLayout" name="gridLayout_15">
         <item row="7" column="5">
          <layout class="QGridLayout" name="gridLayout_43">
@@ -1665,7 +1768,7 @@
          </widget>
         </item>
         <item row="7" column="2">
-         <widget class="QLineEdit" name="lineEdit_obrengstMei">
+         <widget class="QLineEdit" name="lineEdit_opbrengstMei">
           <property name="text">
            <string>44.00</string>
           </property>
@@ -1703,7 +1806,7 @@
          </widget>
         </item>
         <item row="6" column="2">
-         <widget class="QLineEdit" name="lineEdit_obrengstApr">
+         <widget class="QLineEdit" name="lineEdit_opbrengstApr">
           <property name="text">
            <string>37.29</string>
           </property>
@@ -1720,7 +1823,7 @@
          </widget>
         </item>
         <item row="2" column="2">
-         <widget class="QLineEdit" name="lineEdit_obrengstJan">
+         <widget class="QLineEdit" name="lineEdit_opbrengstJan">
           <property name="text">
            <string>6.38</string>
           </property>
@@ -1730,7 +1833,7 @@
          </widget>
         </item>
         <item row="5" column="2">
-         <widget class="QLineEdit" name="lineEdit_obrengstMaart">
+         <widget class="QLineEdit" name="lineEdit_opbrengstMaart">
           <property name="text">
            <string>26.17</string>
           </property>
@@ -1740,7 +1843,7 @@
          </widget>
         </item>
         <item row="8" column="2">
-         <widget class="QLineEdit" name="lineEdit_obrengstJun">
+         <widget class="QLineEdit" name="lineEdit_opbrengstJun">
           <property name="text">
            <string>40.33</string>
           </property>
@@ -1750,7 +1853,7 @@
          </widget>
         </item>
         <item row="3" column="2">
-         <widget class="QLineEdit" name="lineEdit_obrengstFeb">
+         <widget class="QLineEdit" name="lineEdit_opbrengstFeb">
           <property name="text">
            <string>18.04</string>
           </property>
@@ -1760,7 +1863,7 @@
          </widget>
         </item>
         <item row="12" column="2">
-         <widget class="QLineEdit" name="lineEdit_Okt">
+         <widget class="QLineEdit" name="lineEdit_opbrengstOkt">
           <property name="text">
            <string>18.38</string>
           </property>
@@ -1770,7 +1873,7 @@
          </widget>
         </item>
         <item row="15" column="2">
-         <widget class="QLineEdit" name="lineEdit_obrengstDec">
+         <widget class="QLineEdit" name="lineEdit_opbrengstDec">
           <property name="text">
            <string>5.13</string>
           </property>
@@ -1801,7 +1904,7 @@
          </widget>
         </item>
         <item row="10" column="2">
-         <widget class="QLineEdit" name="lineEdit_obrengstAug">
+         <widget class="QLineEdit" name="lineEdit_opbrengstAug">
           <property name="text">
            <string>35.08</string>
           </property>
@@ -1840,7 +1943,7 @@
          </widget>
         </item>
         <item row="13" column="2">
-         <widget class="QLineEdit" name="lineEdit_obrengstNov">
+         <widget class="QLineEdit" name="lineEdit_opbrengstNov">
           <property name="text">
            <string>9.38</string>
           </property>
@@ -1857,7 +1960,7 @@
          </widget>
         </item>
         <item row="9" column="2">
-         <widget class="QLineEdit" name="lineEdit_obrengstJul">
+         <widget class="QLineEdit" name="lineEdit_opbrengstJul">
           <property name="text">
            <string>40.58</string>
           </property>
@@ -1874,7 +1977,7 @@
          </widget>
         </item>
         <item row="11" column="2">
-         <widget class="QLineEdit" name="lineEdit_obrengstSep">
+         <widget class="QLineEdit" name="lineEdit_opbrengstSep">
           <property name="text">
            <string>26.38</string>
           </property>
@@ -2089,7 +2192,7 @@
         </item>
        </layout>
       </item>
-      <item row="5" column="1">
+      <item row="5" column="2">
        <spacer name="horizontalSpacer_7">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -2102,7 +2205,7 @@
         </property>
        </spacer>
       </item>
-      <item row="4" column="2">
+      <item row="4" column="3">
        <spacer name="verticalSpacer_5">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -2116,6 +2219,23 @@
        </spacer>
       </item>
       <item row="3" column="5">
+       <widget class="QLabel" name="label_21">
+        <property name="text">
+         <string>rendement omvormer</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QLineEdit" name="lineEdit_omvormerRendement">
+        <property name="text">
+         <string>95</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
        <spacer name="horizontalSpacer_8">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -2128,7 +2248,7 @@
         </property>
        </spacer>
       </item>
-      <item row="9" column="0">
+      <item row="9" column="1">
        <spacer name="horizontalSpacer_49">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -2140,6 +2260,13 @@
          </size>
         </property>
        </spacer>
+      </item>
+      <item row="3" column="4">
+       <widget class="QLabel" name="label_22">
+        <property name="text">
+         <string>%</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -2161,21 +2288,8 @@
    <attribute name="title">
     <string>3) Bereken</string>
    </attribute>
-   <layout class="QGridLayout" name="gridLayout_7">
-    <item row="5" column="0">
-     <spacer name="verticalSpacer_8">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="0" column="0">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
      <widget class="QLabel" name="label_19">
       <property name="font">
        <font>
@@ -2187,49 +2301,9 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item>
      <layout class="QGridLayout" name="gridLayout_8">
-      <item row="1" column="0">
-       <layout class="QGridLayout" name="gridLayout_13">
-        <item row="3" column="0">
-         <widget class="QCalendarWidget" name="calendarWidget"/>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_20">
-          <property name="text">
-           <string>Plaatsingsdatum</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <spacer name="verticalSpacer_10">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-      <item row="1" column="2">
-       <spacer name="verticalSpacer_9">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="3">
+      <item row="2" column="0">
        <spacer name="horizontalSpacer_6">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -2242,27 +2316,126 @@
         </property>
        </spacer>
       </item>
+      <item row="3" column="0">
+       <layout class="QGridLayout" name="gridLayout_19">
+        <item row="0" column="1">
+         <widget class="QPushButton" name="pushButton_bereken">
+          <property name="text">
+           <string>bereken</string>
+          </property>
+          <property name="bereken" stdset="0">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="0">
+         <spacer name="horizontalSpacer_51">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="4">
+         <spacer name="horizontalSpacer_52">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="2">
+         <spacer name="horizontalSpacer_54">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item row="6" column="0">
+       <spacer name="verticalSpacer_9">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="0">
+       <layout class="QGridLayout" name="gridLayout_13">
+        <item row="0" column="0">
+         <widget class="QCalendarWidget" name="calendarWidget"/>
+        </item>
+        <item row="0" column="1">
+         <spacer name="horizontalSpacer_46">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item row="4" column="0">
+       <spacer name="horizontalSpacer_53">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_20">
+        <property name="text">
+         <string>Resultaat</string>
+        </property>
+       </widget>
+      </item>
      </layout>
-    </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="pushButton_bereken">
-      <property name="text">
-       <string>bereken</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <spacer name="verticalSpacer_11">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
     </item>
    </layout>
   </widget>
