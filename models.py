@@ -12,7 +12,7 @@ dt = 1/4
 t = np.arange(0, 24, dt)
 
 def dagenInMaand(maand):
-    lookupTable = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    lookupTable = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     return lookupTable[maand-1]
 
 def int2Maand(maand):
@@ -69,7 +69,7 @@ class dailyConsumption():
         
         y_int = np.sum(y*dt)
         baseline = np.ones(len(t))*(dagverbruik-y_int)/len(t)/dt
-        print("baseline: ", (dagverbruik-y_int)/len(t)/dt)
+        #print("baseline: ", (dagverbruik-y_int)/len(t)/dt)
         
         y = y + baseline
 
