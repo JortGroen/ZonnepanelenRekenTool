@@ -104,24 +104,56 @@ def bereken_uit_UI(ui):
     ]
     opbrengsten = strArray2FloatArray(opbrengsten)
     
-    #bereken(verbruik)
-    bereken(verbruik)
+    startdatum = ui.lineEdit_startdatum.text()
+    einddatum = ui.lineEdit_einddatum.text()
+    batterijCap = float(ui.lineEdit_batterijCap.text())
     
     
-def bereken(verbruik):
+    plots = (ui.checkBox_verbruikVSproductie_1.isChecked(),
+             ui.checkBox_verbruikVSproductie_2.isChecked(),
+             ui.comboBox_verbruikVSproductie_2.currentText(),
+             ui.checkBox_verbruikVSproductie_3.isChecked(),
+             ui.checkBox_aankoopVSteruglevering_1.isChecked(),
+             ui.checkBox_aankoopVSteruglevering_2.isChecked(),
+             ui.comboBox_aankoopVSteruglevering_2.currentText(),
+             ui.checkBox_aankoopVSteruglevering_3.isChecked(),
+             ui.checkBox_batterij_lvl_mean.isChecked(),
+             ui.checkBox_batterij_lvl_exact.isChecked()
+             )
+    
+    totaal_aangekocht, totaal_teruggeleverd = bereken(verbruik, batterijCap, plots)
+    geld_aangekocht = round(totaal_aangekocht*float(ui.lineEdit_ePrijsHeen.text()),2)
+    geld_teruggeleverd = round(totaal_teruggeleverd*float(ui.lineEdit_ePrijsTerug.text()),2)
+    result = round(totaal_aangekocht-totaal_teruggeleverd,2)
+    geld_result = round(geld_aangekocht-geld_teruggeleverd,2)
+    
+    ui.label_result1.setText("totaal aangekocht: "+str(totaal_aangekocht)+" kWh")
+    ui.label_result2.setText("totaal teruggeleverd: "+str(totaal_teruggeleverd)+" kWh")    
+    ui.label_result3.setText("totaal: "+str(result)+" kWh")
+    ui.label_result1b.setText("€ "+str(geld_aangekocht))
+    ui.label_result2b.setText("€ "+str(geld_teruggeleverd))
+    ui.label_result3b.setText("€ "+str(geld_result))
+    if geld_result >= 0:
+        ui.label_result3c.setText("(u moet betalen)")
+    else:
+        ui.label_result3c.setText("(u krijgt geld)")
+    
+def bereken(verbruik_m, batterijCap, plots):
     plt.close('all')
     dt = 1/4 # 15 minutes
     tijd = np.arange(0, 24, dt)
     
-    batterijCap = 13.5*1000 # maximale cappaciteit van de batterij [Wh], tesla heeft 6.4 en 13.5 kWh
+    batterijCap = batterijCap*1000 # maximale cappaciteit van de batterij [Wh], tesla heeft 6.4 en 13.5 kWh
     batterijCap = batterijCap/dt # cappaciteit in Wkwartier
     batterij = 0 # start met lege batterij 
+    
+    verbruik = np.zeros((365, len(tijd)))
+    productie = np.zeros((365, len(tijd)))
     teruglever = np.zeros((365, len(tijd)))
     aankoop = np.zeros((365, len(tijd)))
     batterij_t = np.zeros((365, len(tijd)))
     
-    verbruik = np.multiply(verbruik, 1000) # from kWh to Wh    
-    
+    verbruik_m = np.multiply(verbruik_m, 1000) # from kWh to Wh    
     
     dag_abs = 1
     for jaar in range(1):
@@ -130,13 +162,16 @@ def bereken(verbruik):
             
             for dag in range(1,models.dagenInMaand(maand)+1):
                 #print(dag)
-                dagverbruik = models.dailyConsumption(maand, verbruik[maand-1])
+                dagverbruik = models.dailyConsumption(maand, verbruik_m[maand-1])
                 dagverbruik = dagverbruik.getVerbruik()
-                dagproductie = data_getDay(dag_abs)
+                dagproductie = data_getDay(dag_abs)                
                 restant = dagproductie-dagverbruik
                 
+                verbruik[dag_abs-1,:] = dagverbruik
+                productie[dag_abs-1,:] = dagproductie
+                
                 # verwerk met batterij
-                for t, _ in enumerate(tijd):
+                for t, _ in enumerate(tijd):                    
                     batterij = batterij + restant[t]
                     if batterij<0: # batterij is leeg
                         aankoop[dag_abs-1, t] = abs(batterij)
@@ -147,57 +182,84 @@ def bereken(verbruik):
                     batterij_t[dag_abs-1,t] = batterij
                     
                 dag_abs = dag_abs+1 # nieuwe dag hierna
-            #print("plotting dag", dag_abs-2)
-            plt.figure(num=1)
-            plt.subplot(3,4,maand)
-            plt.plot(tijd, dagverbruik)
-            plt.plot(tijd, dagproductie)
-            plot_settings(maand, batterijCap*dt)
-            plt.legend(["verbruik", "productie"], loc='upper left')
+                
+            if(plots[0]):
+                #print("plotting dag", dag_abs-2)
+                plt.figure(num=1)
+                plt.subplot(3,4,maand)
+                plt.plot(tijd, dagverbruik)
+                plt.plot(tijd, dagproductie)
+                plot_settings(maand, batterijCap*dt)
+                plt.legend(["verbruik", "productie"], loc='upper left')
             
-            plt.figure(num=2)
-            plt.subplot(3,4,maand)
-            plt.plot(tijd, aankoop[dag_abs-2,:])
-            plt.plot(tijd, teruglever[dag_abs-2,:])
-            plt.plot(tijd, batterij_t[dag_abs-2,:]*dt)
-            plot_settings(maand, batterijCap*dt)
-            plt.legend(["aankoop", "teruggeleverd", "batterij"], loc='upper left')
-          
-    plt.figure(num=2)
-    manager = plt.get_current_fig_manager()
-    manager.window.showMaximized()    
-    plt.figure(num=1)
-    manager = plt.get_current_fig_manager()
-    manager.window.showMaximized()
+            if(plots[4]):
+                plt.figure(num=4)
+                plt.subplot(3,4,maand)
+                plt.plot(tijd, aankoop[dag_abs-2,:])
+                plt.plot(tijd, teruglever[dag_abs-2,:])
+                plt.plot(tijd, batterij_t[dag_abs-2,:]*dt)
+                plot_settings(maand, batterijCap*dt)
+                plt.legend(["aankoop", "teruggeleverd", "batterij"], loc='upper left')
     
-    plt.figure()
-    dagen = np.arange(1,366)
-    aankoop_d = np.sum(aankoop,1)
-    plt.plot(dagen, aankoop_d)
-    plt.title("aankoop elektricitieit")
-    plt.xlabel("tijd [dagen]")
-    plt.ylabel("Watt")
-            
-    plt.figure()
-    dagen = np.arange(1,366)
-    batterij_d = np.mean(batterij_t,1)*dt
-    plt.plot(dagen, batterij_d)
-    plt.plot(dagen, np.ones(len(dagen))*batterijCap*dt)
-    plt.title("batterij level (gemiddelde over dag)")
-    plt.xlabel("tijd [dagen]")
-    plt.ylabel("cappaciteit [kWh]")
+    if(plots[0]): # figure 1
+        plt.figure(num=1)
+        manager = plt.get_current_fig_manager()
+        manager.window.showMaximized()    
+        
+    if(plots[1]): # figure 2
+        plt.figure(num=2)
+        plot_maand(plots[2], tijd, verbruik, productie, batterij_t*dt, batterijCap, ["aankoop", "teruggeleverd", "batterij"])        
+        
+    if(plots[3]): # figure 3
+        plt.figure(num=3)
+        dagen = np.arange(1,366)
+        verbruik_d = np.sum(verbruik,1)
+        plt.plot(dagen, verbruik_d)
+        plt.title("verbruik elektricitieit")
+        plt.xlabel("tijd [dagen]")
+        plt.ylabel("Watt")
+        plt.ylim(0,max(verbruik_d)*1.1)
+        
+    if(plots[4]): # figure 4
+        plt.figure(num=4)
+        manager = plt.get_current_fig_manager()
+        manager.window.showMaximized()   
+        
+    if(plots[5]): # figure 5
+        plt.figure(num=5)
+        plot_maand(plots[6], tijd, aankoop, teruglever, batterij_t*dt, batterijCap, ["aankoop", "teruggeleverd", "batterij"])
+        
+    if(plots[7]): # figure 6
+        plt.figure(num=6)
+        dagen = np.arange(1,366)
+        aankoop_d = np.sum(aankoop,1)
+        plt.plot(dagen, aankoop_d)
+        plt.title("aankoop elektricitieit")
+        plt.xlabel("tijd [dagen]")
+        plt.ylabel("Watt")
+        
+    if(plots[8]): # figure 7
+        plt.figure(7)
+        dagen = np.arange(1,366)
+        batterij_d = np.mean(batterij_t,1)*dt
+        plt.plot(dagen, batterij_d)
+        plt.plot(dagen, np.ones(len(dagen))*batterijCap*dt)
+        plt.title("batterij level (gemiddelde over dag)")
+        plt.xlabel("tijd [dagen]")
+        plt.ylabel("cappaciteit [kWh]")
     
-    plt.figure()
-    dagen = np.arange(1,366,1/24/4)
-    batterij_td = np.reshape(batterij_t, -1, order='C')*dt
-    plt.plot(dagen, batterij_td)
-    plt.plot(dagen, np.ones(len(dagen))*batterijCap*dt)
-    plt.title("batterij level (exact)")
-    plt.xlabel("tijd [dagen]")
-    plt.ylabel("cappaciteit [kWh]")
+    if(plots[9]): # figure 8
+        plt.figure(8)
+        dagen = np.arange(1,366,1/24/4)
+        batterij_td = np.reshape(batterij_t, -1, order='C')*dt
+        plt.plot(dagen, batterij_td)
+        plt.plot(dagen, np.ones(len(dagen))*batterijCap*dt)
+        plt.title("batterij level (exact)")
+        plt.xlabel("tijd [dagen]")
+        plt.ylabel("cappaciteit [kWh]")
                            
     #plt.close('all')
-    plot_maand(2, tijd, aankoop, teruglever, batterij_t*dt, batterijCap, ["aankoop", "teruggeleverd", "batterij"])
+    
     plt.show()
     
     totaal_aangekocht = round(np.sum(np.sum(aankoop*dt))/1000,2)
@@ -206,9 +268,13 @@ def bereken(verbruik):
     print("totaal aangekocht = ",totaal_aangekocht, "kWh")
     print("totaal teruggeleverd = ", totaal_teruggeleverd, "kWh")
     
-    return aankoop, teruglever, batterij_t
+    return totaal_aangekocht, totaal_teruggeleverd
 
 def plot_maand(maand, tijd, y, y2, batterij_t, batterijCap, legend):
+    
+    if isinstance(maand, str):
+        maand = models.maand2Int(maand)
+    
     if maand == 1:
         startdag = 1
     else:
@@ -221,15 +287,15 @@ def plot_maand(maand, tijd, y, y2, batterij_t, batterijCap, legend):
     y2 = y2[startdag:laatstedag,:]
     batterij_t = batterij_t[startdag:laatstedag,:]
     
-    plt.figure()
     for dag in range(0,y.shape[0]):
         plt.subplot(8,4,dag+1)
         plt.plot(tijd, y[dag,:])
         plt.plot(tijd, y2[dag,:])
         plt.plot(tijd, batterij_t[dag,:])
         plt.legend(legend, loc='upper left', fontsize='xx-small')
-        plt.title(str(dag+1)+" "+models.int2Maand(maand), fontsize='xx-small')
-        plt.text(23, 6000, "batterij "+str(batterijCap/1000)+"kWh", verticalalignment='bottom', horizontalalignment='right')
+        batterijText = ", batterij "+str(batterijCap/1000)+"kWh"
+        plt.title(str(dag+1)+" "+models.int2Maand(maand)+batterijText, fontsize='xx-small')
+        #plt.text(23, 6000, "batterij "+str(batterijCap/1000)+"kWh", verticalalignment='bottom', horizontalalignment='right')
     
 
 def plot_settings(maand, batterijCap):
@@ -241,5 +307,5 @@ def plot_settings(maand, batterijCap):
     plt.text(23, 6000, "batterij "+str(batterijCap/1000)+"kWh", verticalalignment='bottom', horizontalalignment='right')
 
 # verbruik = [273.7, 773.92, 1122.69, 1599.74, 1887.6, 1730.16, 1740.88, 1504.93, 1131.7, 788.5, 402.4, 220.08]
-verbruik = np.ones(12)*356.07
-aankoop, teruglever, batterij_t = bereken(verbruik)
+# verbruik = np.ones(12)*356.07
+# aankoop, teruglever, batterij_t = bereken(verbruik)

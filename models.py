@@ -19,6 +19,14 @@ def int2Maand(maand):
     lookupTable = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"]
     return lookupTable[maand-1]
 
+def maand2Int(maand):
+    lookupTable = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"]  
+    for i in range(0,len(lookupTable)):
+        if maand == lookupTable[i]:
+            return i+1
+    print("could not find which month is \"",maand,"\"")
+    return 1
+
 def daglichtRange(maand):
     zonsopgang = [8.75, 8, 7, 6.75, 5.75, 5.33, 5.66, 6.33, 7.25, 8.1, 8, 8.75]
     zonsondergang = [17, 17.8, 18.75, 20.66, 21.5, 22, 22, 21, 20, 18.75, 16.75, 16.5]
